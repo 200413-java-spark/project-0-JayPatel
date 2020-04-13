@@ -1,9 +1,6 @@
-# Calculator
-Expected Input:
->calc 2+2
+# Readme File
 
-Expected Output:
->4
+
 
 
 
