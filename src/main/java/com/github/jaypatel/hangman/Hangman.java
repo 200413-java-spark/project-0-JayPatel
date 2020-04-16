@@ -3,7 +3,11 @@ package com.github.jaypatel.hangman;
 import java.util.Map;
 import java.util.Scanner;
 import java.util.HashMap;
-
+/**
+ * A game of Hangman
+ * @author Jay Patel
+ * @version 0.1.1
+ */
 
 public class Hangman {
     static int strikes = 0;
@@ -13,6 +17,16 @@ public class Hangman {
     static Map<String, Integer> mappedLetters = new HashMap<String, Integer>();
 
     public static void main( String[] args) {
+
+        startGame();
+
+    }
+
+    /**
+     * Starts the game of Hangman.
+     */
+    public static void startGame() {
+        
         System.out.println("Hello! Lets play a game of Hangman");
         System.out.println("The length of the word is " + theWord.length());
         System.out.println("Enter the first letter");
@@ -25,6 +39,16 @@ public class Hangman {
             System.out.println(msg);
         }
     }
+
+
+
+/**
+ * This method takes in the letter that is entered either verifys if its correct or not correct 
+ * returns accordingly
+ * @param: The letter that is entered 
+ * @return: A string message that says correct/incorrect guess
+ */
+
 
     public static String letterEntered(String letter) {
         counter++;

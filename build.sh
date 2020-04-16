@@ -1,1 +1,1 @@
-javac Hangman.java
+mvn compile
