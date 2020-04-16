@@ -1,0 +1,15 @@
+<project>
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>com.github.jaypatel</groupId>
+    <artifactId>hangman</artifactId>
+    <version>0.1.0</version>
+   
+    <dependencies>
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>4.13</version>
+        </dependency>
+    </dependencies> 
+  </project>
+  

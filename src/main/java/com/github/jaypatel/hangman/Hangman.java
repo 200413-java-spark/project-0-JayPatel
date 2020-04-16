@@ -1,3 +1,5 @@
+package com.github.jaypatel.hangman;
+
 import java.util.Map;
 import java.util.Scanner;
 import java.util.HashMap;
