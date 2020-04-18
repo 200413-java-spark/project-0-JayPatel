@@ -1,5 +1,10 @@
 # Changelog
 
+## Version 0.2.0
+### Changed
+- Fixed bugs, ex. The Enter Key bug
+- Made the game much more extensive
+
 ## Version 0.1.1
 ### Added 
 - Basic java docs
