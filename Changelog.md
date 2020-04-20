@@ -1,5 +1,10 @@
 # Changelog
 
+## Version 0.3.0
+### Added 
+- The ability to read and pick a random word from a file
+- Word.java, refactored code to make it more organized. 
+
 ## Version 0.2.0
 ### Changed
 - Fixed bugs, ex. The Enter Key bug
