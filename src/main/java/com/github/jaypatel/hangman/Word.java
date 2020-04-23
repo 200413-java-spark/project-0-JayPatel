@@ -15,19 +15,14 @@ public class Word {
      int counter = 0;
      static int strikes = 0;
      static int strikesAllowed = 15;
-     static ArrayList<Character> mappedLetters = new ArrayList<Character>();
-     static ArrayList<Character> wrongLetters = new ArrayList<Character>();
+      ArrayList<Character> mappedLetters = new ArrayList<Character>();
+      ArrayList<Character> wrongLetters = new ArrayList<Character>();
 
 
-     public Word(String theWord) {
-         this.theWord = theWord;
-         this.theWordLength = theWord.length();
-         createBlanks();
-     }
 
      public Word() {
          File file = new File(
-                 "/Users/Jay/OneDrive/Desktop/Java/Revature/project-0/src/main/java/com/github/jaypatel/hangman/word.txt");
+                 "/Users/Jay/OneDrive/Desktop/Java/Revature/project-0/src/main/java/com/github/jaypatel/hangman/listofwords.txt");
          Random r = new Random();
          int n = 0;
          try {
@@ -117,7 +112,7 @@ public class Word {
         }
     }
 
-    public static void addWrongLetter(char letter) {
+    public  void addWrongLetter(char letter) {
         wrongLetters.add(letter);
     }
 
@@ -131,7 +126,7 @@ public class Word {
         blanks[index] = letter;
     }
 
-    public static void displayWrongLetters() {
+    public  void displayWrongLetters() {
         if (wrongLetters.size() == 0) {
             return;
         } else {

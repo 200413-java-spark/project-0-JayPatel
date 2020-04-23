@@ -50,7 +50,7 @@ public class Hangman {
             System.out.println(msg);
 
             word.printBlanks();
-            Word.displayWrongLetters();
+            word.displayWrongLetters();
             System.out.println("You have " + (Word.strikesAllowed - Word.strikes) + "/" + Word.strikesAllowed + " wrong guesses left" );
         }
     }
