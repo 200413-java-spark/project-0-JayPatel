@@ -1,56 +1,39 @@
 package com.github.jaypatel.hangman;
 
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.IOException;
-import java.util.Random;
-import java.util.Scanner;
 import java.util.ArrayList;
+import com.github.jaypatel.file.FileParser;
 
 public class Word {
 
-     int theWordLength;
-     String theWord;
-     char[] blanks;
-     int counter = 0;
-     static int strikes = 0;
-     static int strikesAllowed = 15;
-      ArrayList<Character> mappedLetters = new ArrayList<Character>();
-      ArrayList<Character> wrongLetters = new ArrayList<Character>();
+     static int theWordLength;
+    static String theWord;
+    static char[] blanks;
+    int counter = 0;
+    static int strikes = 0;
+    static int strikesAllowed = 15;
+    ArrayList<Character> mappedLetters = new ArrayList<Character>();
+    ArrayList<Character> wrongLetters = new ArrayList<Character>();
 
 
+    public Word() {
+        FileParser fp = new FileParser();
 
-     public Word() {
-         File file = new File(
-                 "/Users/Jay/OneDrive/Desktop/Java/Revature/project-0/src/main/java/com/github/jaypatel/hangman/listofwords.txt");
-         Random r = new Random();
-         int n = 0;
-         try {
-             for (Scanner scan = new Scanner(file); scan.hasNext();) {
-                 n++;
-                 String line = scan.nextLine();
-                 if (r.nextInt(n) == 0) {
-                     theWord = line;
-                 }
-             }
-         } catch (FileNotFoundException e) {
-             e.printStackTrace();
-         } catch (IOException e) {
-             e.printStackTrace();
-         }
-         this.theWordLength = theWord.length();
-         createBlanks();
-     }
+    }
+
+    public Word(String theWord, int theWordLength) {
+        this.theWord = theWord;
+        this.theWordLength = theWordLength;
+    }
 
 
-     public void createBlanks() {
-         blanks = new char[theWord.length()];
-         for (int i = 0; i < blanks.length; i++) {
-             if (Character.isLetter(theWord.charAt(i)) || Character.isDigit(theWord.charAt(i))) {
-                 blanks[i] = '-';
-             } else {
-                 blanks[i] = theWord.charAt(i);
-                 theWordLength--;
+    public static void createBlanks() {
+        blanks = new char[theWord.length()];
+        for (int i = 0; i < blanks.length; i++) {
+            if (Character.isLetter(theWord.charAt(i)) || Character.isDigit(theWord.charAt(i))) {
+                blanks[i] = '-';
+            } else {
+                blanks[i] = theWord.charAt(i);
+                theWordLength--;
              }
          }
      }

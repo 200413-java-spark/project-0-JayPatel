@@ -1,5 +1,13 @@
 # Changelog
 
+## Version 0.3.1
+### Added 
+- FileParser.java to handle file reading
+
+### Changed
+- Code refactoring, moved some responbilites into another class
+
+
 ## Version 0.3.0
 ### Added 
 - The ability to read and pick a random word from a file

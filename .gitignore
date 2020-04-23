@@ -1,7 +1,3 @@
 target/
-.settings
-.vscode
-bin/
 .classpath
 .project
-.metadata
