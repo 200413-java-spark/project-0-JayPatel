@@ -35,7 +35,7 @@ public class MyDatabase {
     // }
 
     public static void updateTable() {
-        try (Connection conn = DriverManager.getConnection("jdbc:postgresql://localhost:5432/mydb", "user", "password")) {
+        try (Connection conn = DriverManager.getConnection("jdbc:postgresql://localhost:5432/mydb", "hangmandb", "hangmandb")) {
              PreparedStatement stmt =  conn.prepareStatement("insert into words values(?)");
 
             // PreparedStatement stmt =  conn.prepareStatement("insert into scores values(?, ?, ?, ?)");
