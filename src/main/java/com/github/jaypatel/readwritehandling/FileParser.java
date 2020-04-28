@@ -1,4 +1,4 @@
-package com.github.jaypatel.file;
+package com.github.jaypatel.readwritehandling;
 
 import java.util.Random;
 import java.util.Scanner;
@@ -14,7 +14,7 @@ public class FileParser {
 
      public  FileParser() {
          File file = new File(
-                 "/Users/Jay/OneDrive/Desktop/Java/Revature/project-0/src/main/java/com/github/jaypatel/file/listofwords.txt");
+                 "/Users/Jay/OneDrive/Desktop/Java/Revature/project-0/src/main/java/com/github/jaypatel/readwritehandling/listofwords.txt");
          Random r = new Random();
          int n = 0;
          try {
