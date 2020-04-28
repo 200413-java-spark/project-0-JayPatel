@@ -1,6 +1,8 @@
 package com.github.jaypatel.hangman;
 
 import java.util.Scanner;
+
+import com.github.jaypatel.readwritehandling.MyDatabase;
 /**
  * A game of Hangman
  * @author Jay Patel
@@ -9,34 +11,98 @@ import java.util.Scanner;
 
 public class Hangman {
 
-    static boolean continueGame = true;
+    static  boolean continueGame = true;
+    static  boolean gameStart = false;
+    static  boolean gameWon = false;
     static Scanner scan = new Scanner(System.in);
-    static Word word = new Word();
 
 
     public static void main(String[] args) {
 
-        System.out.println("Hello! Do you want to play a game of Hangman?");
-        System.out.println("Press 'Y' for yes and 'N' for no");
+        mainMenu();
+        MyDatabase.updateTable();
+
+ 
+    } 
+
+    // public static int getGameStart() {
+    //     if (gameStart == true) {
+    //         return 1;
+    //     } else {
+    //         return 0;
+    //     }
+    // }
+
+    // public static int getGameWon() {
+    //     if (gameWon == true) {
+    //         return 1;
+    //     } else {
+    //         return 0;
+    //     }
+    // }
+
+
+
+
+    public static void mainMenu() {
+        System.out.println();
+        System.out.println();
+        System.out.println();
+        System.out.println();
+        System.out.println();
+
+        System.out.println("Hello! Welcome to Hangman!");
+        System.out.println("Please select one of the following options.");
+        System.out.println("1. Start Game");
+        System.out.println("2. Leaderboards");
+        System.out.println("3. Quit Game");
+
         boolean temp = true;
         while (temp) {
-            char answer = scan.next().charAt(0);
-            answer = Character.toLowerCase(answer);
-            if (answer == 'y') {
+            int answer = scan.nextInt();
+            if (answer == 1) {
                 temp = false;
                 startGame();
             } 
-            if (answer == 'n') {
+            // if (answer == 2) {
+            //     showLeaderboard();
+            // }
+           else if (answer == 3) {
                 temp = false;
-                System.out.println("Thank You");
+                System.out.println();
+                System.out.println();
+                System.out.println();
+                System.out.println();
+                System.out.println();
+                System.out.println("Game Over, Thank You");
+                System.out.println();
+                System.out.println();
+                System.out.println();
+                System.out.println();
+                System.out.println();
+            // } else {
+            //     System.out.println("Not a valid input, please enter again.");
             }
         }
-    } 
+    }
+
+
+    // public static void createPlayer() {
+    //     System.out.println("Please enter your name");
+    //     String name = scan.nextLine();
+    //     Player p = new Player(name);
+
+    // }
+
 
     /**
      * Starts the game of Hangman.
      */
     public static void startGame() {
+
+  
+        gameStart = true;
+        Word word = new Word();
 
         System.out.println("Lets play a game of Hangman");
 

@@ -1,14 +1,13 @@
 package com.github.jaypatel.hangman;
 
 import java.util.ArrayList;
-import com.github.jaypatel.file.FileParser;
+import com.github.jaypatel.readwritehandling.FileParser;
 
 public class Word {
 
-     static int theWordLength;
+    static int theWordLength;
     static String theWord;
     static char[] blanks;
-    int counter = 0;
     static int strikes = 0;
     static int strikesAllowed = 15;
     ArrayList<Character> mappedLetters = new ArrayList<Character>();
@@ -63,8 +62,6 @@ public class Word {
                 return "You have already entered this letter";
             }
         }
-
-        counter++;
         if (theWord.indexOf(Character.toLowerCase(letter)) == -1 && (theWord.indexOf(Character.toUpperCase(letter)) == -1)) {
             addWrongLetter(letter);
             strikes++;
@@ -83,6 +80,7 @@ public class Word {
             }
             if (mappedLetters.size() == theWordLength) {
                 Hangman.continueGame = false;
+                Hangman.gameWon = true;
                 return "You Win!";
             } else {
                 for (int i = 0; i < theWord.length(); i++) {
@@ -123,6 +121,13 @@ public class Word {
         }
      
     }
+
+    
+    public static String getWord() {
+        return theWord;
+    }
+
+    
 }
 
 
