@@ -37,7 +37,7 @@ public class MyDatabase {
     public static void updateTable() {
 
         // System.out.println("We got to this point");
-        try (Connection conn = DriverManager.getConnection("jdbc:postgresql://localhost:5432/mydb", "hangmandb", "hangmandb")) {
+        try (Connection conn = DriverManager.getConnection("jdbc:postgresql://localhost:5432/hangmandb", "hangmandb", "hangmandb")) {
              
             if(conn != null) {
                 System.out.println("not null");
