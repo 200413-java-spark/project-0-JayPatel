@@ -85,7 +85,6 @@ public class Word {
             }
             if (mappedLetters.size() == theWordLength) {
                 Hangman.continueGame = false;
-                Hangman.gameWon = true;
                 return "You Win!";
             } else {
                 for (int i = 0; i < theWord.length(); i++) {
