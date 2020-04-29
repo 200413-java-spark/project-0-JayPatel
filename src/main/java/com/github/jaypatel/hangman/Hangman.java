@@ -12,8 +12,7 @@ import com.github.jaypatel.readwritehandling.MyDatabase;
 public class Hangman {
 
     static  boolean continueGame = true;
-    static  boolean gameStart = false;
-    static  boolean gameWon = false;
+
     static Scanner scan = new Scanner(System.in);
 
 
@@ -54,7 +53,6 @@ public class Hangman {
         System.out.println("Hello! Welcome to Hangman!");
         System.out.println("Please select one of the following options.");
         System.out.println("1. Start Game");
-        System.out.println("2. Leaderboards");
         System.out.println("3. Quit Game");
 
         boolean temp = true;
@@ -101,12 +99,12 @@ public class Hangman {
     public static void startGame() {
 
   
-        gameStart = true;
+    //  Word word = new Word("hello");
         Word word = new Word();
 
         System.out.println("Lets play a game of Hangman");
 
-        System.out.println("The length of the word is " + word.theWordLength);
+        System.out.println("The length of the word is " + Word.theWordLength);
         word.printBlanks();
         System.out.println("Enter the first letter");
         while (continueGame) {

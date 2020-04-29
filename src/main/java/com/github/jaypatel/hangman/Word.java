@@ -19,6 +19,11 @@ public class Word {
 
     }
 
+    public Word(String theWord) {
+        this.theWord = theWord;
+        this.theWordLength = theWord.length();
+    }
+
     public Word(String theWord, int theWordLength) {
         this.theWord = theWord;
         this.theWordLength = theWordLength;

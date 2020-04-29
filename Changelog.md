@@ -1,5 +1,12 @@
 # Changelog
 
+## Version 0.4.0
+## Added 
+- A work in progress MyDatabase
+
+### Changed
+- Updated the Readme, put some old Junit tests back
+
 ## Version 0.3.1
 ### Added 
 - FileParser.java to handle file reading

@@ -35,13 +35,24 @@ public class MyDatabase {
     // }
 
     public static void updateTable() {
+
+        // System.out.println("We got to this point");
         try (Connection conn = DriverManager.getConnection("jdbc:postgresql://localhost:5432/mydb", "hangmandb", "hangmandb")) {
-             PreparedStatement stmt =  conn.prepareStatement("insert into words values(?)");
+             
+            if(conn != null) {
+                System.out.println("not null");
+            } else {
+                System.out.println("null");
+            }
+            
+            PreparedStatement stmt =  conn.prepareStatement("insert into words values(?)");
 
             // PreparedStatement stmt =  conn.prepareStatement("insert into scores values(?, ?, ?, ?)");
             // stmt.setString(1, Player.getName());
             // stmt.setString(2, Hangman.getGameStart());
             // stmt.setString(3, Hangman.getGameWon());
+
+            
             stmt.setString(1, Word.getWord());
             stmt.addBatch();
             stmt.executeBatch();
